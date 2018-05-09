@@ -149,6 +149,34 @@ import { SelectPopover, SelectPopoverOption } from './select-popover-component';
  * }
  * ```
  *
+ *
+ * ### On Change event
+ *
+ * The Select component does emit an ionChange event.
+ * Along with this event the new value will be passed.
+ *
+ * For example to call a function when selection changes: 
+ *
+ * ```html
+ * <ion-item>
+ *   <ion-label>Toppings</ion-label>
+ *   <ion-select [(ngModel)]="toppings" (ionChange)="onChange($event)">
+ *     <ion-option>Bacon</ion-option>
+ *     <ion-option>Black Olives</ion-option>
+ *     <ion-option>Extra Cheese</ion-option>
+ *     <ion-option>Mushrooms</ion-option>
+ *     <ion-option>Pepperoni</ion-option>
+ *     <ion-option>Sausage</ion-option>
+ *   </ion-select>
+ * </ion-item>
+ * ```
+ *
+ * ```ts
+ * onChange(eventValue: any) {
+ *   console.log(eventValue);
+ * }
+ * ```
+ *
  * @demo /docs/demos/src/select/
  */
 @Component({
